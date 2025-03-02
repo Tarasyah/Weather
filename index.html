@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <div class="weather-container" id="weather-container">
+        
+        <!-- Left Column -->
+        <div class="left-column">
+            <!-- Search Box -->
+            <form class="location" onsubmit="fetchWeather(); return false;">
+                <input type="text" id="city" placeholder="Enter city name">
+                <button type="submit">Search</button>
+                <div id="suggestions" class="suggestions"></div>
+            </form>
+            
+            <!-- Current Weather -->
+            <section class="current-weather">
+                <h1 id="temperature">--°C</h1>
+                <p id="description">Weather Description</p>
+                <p class="city-name" id="city-name">City Name</p>
+            </section>
+            
+            <!-- Weather Details -->
+            <section class="details">
+                <div class="detail-box"><p>Feels Like:</p> <span id="feels-like">--°C</span></div>
+                <div class="detail-box"><p>Humidity:</p> <span id="humidity">--%</span></div>
+                <div class="detail-box"><p>Wind:</p> <span id="wind">-- km/h</span></div>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <!-- Hourly Forecast -->
+            <h2>Hourly Forecast</h2>
+            <section class="hourly-forecast" id="hourly-forecast"></section>
+
+            <!-- 5-Day Forecast -->
+            <h2>5-Day Forecast</h2>
+            <section class="forecast" id="forecast"></section>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
